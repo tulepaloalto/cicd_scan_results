@@ -1,0 +1,4 @@
+prisma-cloud-password: TGpEVHRCTlB3R2NtdzBOQTZPbXgyTVUyTjQ0PQ== #base64encoded
+prisma-cloud-url: https://api.prismacloud.io/
+prisma-cloud-username: MTkzNjVmMTQtYzFhYS00ZTE3LWI0ZTMtZmFjMmFjN2VhMjVi #base64encoded
+code-category: IacMisconfiguration #[Secrets, IacMisconfiguration, Licenses, Vulnerabilities]
