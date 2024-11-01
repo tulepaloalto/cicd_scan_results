@@ -45,6 +45,7 @@ To run:
     python3 get_runs.py config.yml <repo_id>
 
 Ex:
+
     get_runs.py config.yml 43de2057-e942-4834-b52f-d7327b1f9137
 
 ### cicd_scan_results.py
