@@ -46,7 +46,22 @@ To run:
 
 Ex:
 
-    get_runs.py config.yml 43de2057-e942-4834-b52f-d7327b1f9137
+    python3 get_runs.py config.yml 43de2057-e942-4834-b52f-d7327b1f9137
+
+### get_resources.py
+The purpose of this endpoint: 
+
+    bridgecrew/api/v2/errors/code_review_scan/resources
+
+is to obtain the resources that will be used to obtain scan results from the scan results endpoint. 
+
+To run:
+
+    python3 get_resources.py config.yml <repo_id> <runId>
+
+Ex:
+
+    python3 get_resources.py config.yml bbaa2b2d-d6ea-41f7-ae15-b4c73709a8e8 1023293
 
 ### cicd_scan_results.py
 The purpose of this endpoint: 
