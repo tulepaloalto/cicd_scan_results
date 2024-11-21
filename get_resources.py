@@ -47,9 +47,6 @@ def get_resources(headers, repository, runId):
                 repository
             ],
             "runId": runId,
-            "gitUsers": [
-                "sudhir_manne-e25bb51c"
-            ],
             "checkStatus": "Error",
             "codeCategories": []
         },
