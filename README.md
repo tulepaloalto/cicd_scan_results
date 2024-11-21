@@ -53,7 +53,7 @@ The purpose of this endpoint:
 
     bridgecrew/api/v2/errors/code_review_scan/resources
 
-is to obtain the resources that will be used to obtain scan results from the scan results endpoint. 
+is to obtain the resourceUuids that will be used to obtain scan results from the scan results endpoint. 
 
 To run:
 
@@ -68,13 +68,13 @@ The purpose of this endpoint:
 
     bridgecrew/api/v2/errors/code_review_scan/resources/policies
 
-is to obtain the scan results from the provided repository, resource, and runId. 
+is to obtain the scan results from the provided resourceUuid, and runId. 
 
 To run:
 
-    python3 get_runs.py config.yml <repo_id> <resource_name> <runId>
+    python3 get_runs.py config.yml <resourceUuid> <runId>
 
 Ex:
 
-    python3 cicd_scan_results.py config.yml 43de2057-e942-4834-b52f-d7327b1f9137 /planfile.json:azurerm_storage_account.storage_account 1159120      
+    python3 cicd_scan_results.py config.yml 6dedf663-294c-463e-9276-e4e6c0422769:::/tests/MockApis/TwilioService/Dockerfile:/tests/MockApis/TwilioService/Dockerfile. 1212438  
 

@@ -37,7 +37,7 @@ def get_token():
     token = json.loads(response.text)["token"]
     return token
 
-def get_cicd_scan_results(headers, repository, resourceName, runId):
+def get_cicd_scan_results(headers, resourceName, runId):
 
     version_url = PRISMA_CLOUD_URL + "bridgecrew/api/v2/errors/code_review_scan/resources/policies"
     
@@ -46,8 +46,6 @@ def get_cicd_scan_results(headers, repository, resourceName, runId):
         "runId": runId,
         "codeCategories": []
     },
-    "repository": repository,
-    "sourceType": "/planfile.json",
     "offset": 0,
     "limit": 100,
     "sortBy": [
@@ -57,13 +55,13 @@ def get_cicd_scan_results(headers, repository, resourceName, runId):
         }
     ],
     "codeCategory": str(CODE_CATEGORY),
-    "resourceName": resourceName
+    "resourceUuid": resourceName
     })
 
     response = requests.request("POST", version_url, headers=headers, data=payload)
     return response.text
 
-def main(repository, resourceName, runId):
+def main(resourceName, runId):
     FORMAT = '%(asctime)s %(message)s'
     logging.basicConfig(filename='scan_results.log', level=logging.INFO, format=FORMAT)
     token = get_token()
@@ -73,7 +71,7 @@ def main(repository, resourceName, runId):
         'Authorization': 'Bearer ' + token
     }
     
-    print(get_cicd_scan_results(headers, repository, resourceName, runId))
+    print(get_cicd_scan_results(headers, resourceName, runId))
 
 if __name__ == "__main__":
-    main(sys.argv[2], sys.argv[3], sys.argv[4])
+    main(sys.argv[2], sys.argv[3])
